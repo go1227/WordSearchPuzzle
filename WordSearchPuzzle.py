@@ -1,12 +1,80 @@
 __author__ = "Guilherme Ortiz"
-__version__ = "1.0"
-__date_last_modification__ = "12/13/2018"
-__python_version__ = "1"
+__version__ = "1.1"
+__date_last_modification__ = "12/18/2018"
 
 
 import numpy as np
 import random
 import string
+import time
+from urllib.request import urlopen
+
+
+#Program that pulls from the web random words and make them available in the puzzle for the user to search for words.
+
+#Step 1: Ask user how many words should the program use in the game (min. 1, max 10)
+words_qty = -1
+valid_entry = False
+while valid_entry is False:
+    words_qty = input("\nHow many words would you like to search in the puzzle? [min 1, max 10]:\n")
+    if words_qty.isdigit():
+        if int(words_qty) >= 1 and int(words_qty) <= 10:
+            valid_entry = True
+    else:
+        print("This is an invalid number. Try again.")
+
+
+#Step 2: Gather words from web (or use hard-coded option if web attempt fails)
+siteokay = False
+
+backup_words = []
+file = open("backupwords.txt", "r")
+for line in file:
+    line = line.strip('\n').upper()
+    backup_words.append(line)
+file.close()
+
+list_of_words = set() #this set  will contain the FINAL list of words to be used in the game.
+
+
+#the auto words web search should abort automatically if web is not responding after 30 seconds
+time.perf_counter()
+
+print("\nPlease wait...")
+while int(words_qty) > len(list_of_words):
+    link = "http://jimpix.co.uk/generators/word-generator.asp"
+    try:
+        f = urlopen(link)
+        myfile = str(f.read())
+        siteokay = True
+    except:
+        siteokay = False
+
+    if siteokay:
+        is_eligible_word = False
+        result = myfile.find("&bull;")  # We must find at least one bullet point, because that's where the key words are.
+        tmp = str(myfile[result - 12:result]).rstrip().lstrip()
+
+        #print("Checking this string... [" + tmp + "]")
+
+        random_word = ''
+        if (tmp.find(">") != -1):
+            gt_position = tmp.find(">")
+            random_word = tmp[gt_position + 1:].upper()
+            if len(random_word) >= 3 and len(random_word) <= 10:
+                is_eligible_word = True
+
+        if round(time.perf_counter()) < 30 and is_eligible_word == True:
+            #use the word found online: it meets the criteria
+            list_of_words.add(random_word)
+        else:
+            random_word = random.choice(backup_words)
+            list_of_words.add(random_word)
+
+
+
+
+#Step 3: Distribute the words in the game board.
 
 
 #During development time, it's best to print out '-' so you can see the empty spots of the array
@@ -87,8 +155,6 @@ board = []
 board = make_board(bsize)
 
 write_options = ['BOTTOM_TO_TOP','TOP_TO_BOTTOM','LEFT_TO_RIGHT','RIGHT_TO_LEFT']
-list_of_words = ['CLOCK','LIST','BOOKS','GREEN','CANDLE','XEROX']
-random.shuffle(list_of_words)
 
 print('\nWords to look for:')
 for item in list_of_words:

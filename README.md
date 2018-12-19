@@ -1,39 +1,44 @@
 # WordSearchPuzzle
 
-This program generates a word search puzzle board with pre-defined words, but in shuffled positions.
+This program generates a word search puzzle board with random words found on the web.
+In case the auto web search for words fail for any reason, a backup pool of words (backupwords.txt) will be used instead.
 
 Currently, it supports words printed in 4 directions:
 	top to bottom
-	bottm to top
+	bottom to top
 	left to right
 	right to left
 
-The size of the board is hardcoded 15, but that can be customized as necessary, as well as the list of words, which currently are:
-	CLOCK, CANDLE, BOOKS, LIST, XEROX, GREEN
-	
+The size of the board is hardcoded 15, but that can be customized as necessary
+
+
 Output example:
-	
+How many words would you like to search in the puzzle? [min 1, max 10]:
+>> 8
+
 Words to look for:
-CLOCK
-CANDLE
-BOOKS
-LIST
-XEROX
-GREEN
+SMERB
+REFERRED
+LARGEST
+USABLE
+TACIT
+FRISK
+UNFOLDED
+MOPPING
 
 
-Z  N  A  E  C  A  N  D  L  E  G  P  R  J  W  
-D  N  D  N  D  C  N  G  N  K  V  G  B  U  N  
-S  P  Y  T  E  I  V  Y  D  K  I  R  Y  Q  C  
-Y  E  F  S  O  N  C  G  U  A  F  E  J  G  V  
-Q  V  N  I  W  L  Y  Z  R  O  K  E  D  E  G  
-U  I  W  L  I  G  O  I  O  Z  I  N  K  O  G  
-O  U  D  X  L  J  C  S  K  O  O  B  X  C  X  
-T  N  Z  P  D  A  J  G  R  E  K  D  G  Q  M  
-Q  D  W  H  H  R  K  C  O  L  C  Z  T  W  N  
-X  W  U  Y  N  C  R  V  Q  T  L  C  I  C  X  
-V  R  W  U  Z  Y  C  X  E  R  O  X  A  X  V  
-B  Q  C  T  M  T  J  I  M  K  F  I  K  F  W  
-S  F  U  O  Q  D  E  J  K  H  H  E  S  F  O  
-W  M  I  E  J  X  F  H  F  V  J  J  D  C  Y  
-M  P  J  J  S  E  M  U  T  G  B  D  X  O  T
+R  Z  O  V  M  B  L  W  S  E  E  K  L  Z  P  
+A  B  P  D  V  Z  M  T  S  E  G  R  A  L  K  
+G  M  C  U  V  H  N  L  E  X  J  Q  U  O  Z  
+L  K  O  Q  Y  R  R  G  F  R  I  S  K  J  V  
+F  D  C  T  N  E  Y  Q  P  A  T  G  R  X  U  
+J  E  G  O  O  L  T  X  N  Y  E  B  R  Z  Q  
+Y  D  J  L  J  R  O  B  W  D  I  F  O  G  A  
+Q  L  J  M  W  E  N  R  O  E  L  B  A  S  U  
+A  O  H  O  X  F  T  E  J  M  K  K  Q  R  E  
+W  F  V  P  P  E  I  M  L  Y  C  R  E  A  E  
+I  N  M  P  Z  R  C  S  F  A  F  B  E  M  S  
+A  U  U  I  M  R  A  E  C  B  N  K  D  D  A  
+K  U  M  N  D  E  T  T  P  T  B  P  M  I  Z  
+X  D  U  G  Z  D  O  H  O  E  R  F  Y  A  V  
+J  P  B  U  W  M  W  J  V  A  W  R  O  P  X  
