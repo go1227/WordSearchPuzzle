@@ -67,9 +67,9 @@ while int(words_qty) > len(list_of_words):
         if round(time.perf_counter()) < 30 and is_eligible_word == True:
             #use the word found online: it meets the criteria
             list_of_words.add(random_word)
-        else:
-            random_word = random.choice(backup_words)
-            list_of_words.add(random_word)
+    else:
+        random_word = random.choice(backup_words)
+        list_of_words.add(random_word)
 
 
 
