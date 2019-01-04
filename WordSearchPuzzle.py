@@ -1,6 +1,6 @@
 __author__ = "Guilherme Ortiz"
-__version__ = "1.1"
-__date_last_modification__ = "12/18/2018"
+__version__ = "1.2"
+__date_last_modification__ = "1/4/2019"
 
 
 import numpy as np
@@ -67,9 +67,9 @@ while int(words_qty) > len(list_of_words):
         if round(time.perf_counter()) < 30 and is_eligible_word == True:
             #use the word found online: it meets the criteria
             list_of_words.add(random_word)
-        else:
-            random_word = random.choice(backup_words)
-            list_of_words.add(random_word)
+    else:
+        random_word = random.choice(backup_words)
+        list_of_words.add(random_word)
 
 
 
