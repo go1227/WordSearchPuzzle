@@ -1,44 +1,44 @@
 # WordSearchPuzzle
 
 This program generates a word search puzzle board with random words found on the web.
-In case the auto web search for words fail for any reason, a backup pool of words (backupwords.txt) will be used instead.
+In case the automatic web search for words fails for any reason, a backup pool of words (**backupwords.txt**) will be used instead.
 
-Currently, it supports words printed in 4 directions:
+This game supports words printed in 4 directions:
 	top to bottom
 	bottom to top
 	left to right
 	right to left
 
-The size of the board is hardcoded 15, but that can be customized as necessary
-
+The size of the board is hardcoded 15x15 (but I could be customized if needed, directly in the source code, by changing the variable '**bsize = 15**')
 
 Output example:
-How many words would you like to search in the puzzle? [min 1, max 10]:
->> 8
 
-Words to look for:
-SMERB
-REFERRED
-LARGEST
-USABLE
-TACIT
-FRISK
-UNFOLDED
-MOPPING
+**How many words would you like to search in the puzzle? [min 1, max 10]**:
+
+&gt;&gt; 8
+
+**Words to look for**:
+<br />SEGNITY
+<br />REFUGIUM
+<br />QUAGGA
+<br />NEMBUTSU
+<br />MUSROL
+<br />QUONDAM
 
 
-R  Z  O  V  M  B  L  W  S  E  E  K  L  Z  P  
-A  B  P  D  V  Z  M  T  S  E  G  R  A  L  K  
-G  M  C  U  V  H  N  L  E  X  J  Q  U  O  Z  
-L  K  O  Q  Y  R  R  G  F  R  I  S  K  J  V  
-F  D  C  T  N  E  Y  Q  P  A  T  G  R  X  U  
-J  E  G  O  O  L  T  X  N  Y  E  B  R  Z  Q  
-Y  D  J  L  J  R  O  B  W  D  I  F  O  G  A  
-Q  L  J  M  W  E  N  R  O  E  L  B  A  S  U  
-A  O  H  O  X  F  T  E  J  M  K  K  Q  R  E  
-W  F  V  P  P  E  I  M  L  Y  C  R  E  A  E  
-I  N  M  P  Z  R  C  S  F  A  F  B  E  M  S  
-A  U  U  I  M  R  A  E  C  B  N  K  D  D  A  
-K  U  M  N  D  E  T  T  P  T  B  P  M  I  Z  
-X  D  U  G  Z  D  O  H  O  E  R  F  Y  A  V  
-J  P  B  U  W  M  W  J  V  A  W  R  O  P  X  
+<br />R  G  N  M  Z  O  M  Z  Q  F  U  W  M  R  H
+<br />A  Y  V  H  B  W  H  Y  Z  P  C  L  Y  S  U
+<br />Q  U  J  T  O  F  S  M  U  I  G  U  F  E  R
+<br />B  I  O  W  U  M  Q  U  G  M  C  Y  A  A  D
+<br />J  Z  E  Z  F  Z  S  S  T  U  H  S  R  D  Q
+<br />A  C  X  W  Y  K  A  U  X  T  Q  M  X  N  K
+<br />L  C  S  U  U  K  E  P  J  E  O  M  W  J  L
+<br />K  U  E  R  E  W  P  F  C  G  H  A  B  B  G
+<br />G  Z  G  L  N  Z  J  Y  H  M  A  D  R  I  Z
+<br />V  L  N  Q  U  A  G  G  A  V  O  N  Z  N  J
+<br />X  O  I  H  G  R  O  D  D  S  S  O  X  X  Y
+<br />P  R  T  A  P  X  A  L  N  E  K  U  L  Y  H
+<br />T  S  Y  B  P  E  Y  Q  D  V  V  Q  X  D  R
+<br />N  U  K  U  N  E  M  B  U  T  S  U  W  E  O
+<br />Z  M  V  F  G  W  D  S  Z  O  U  D  B  M  I
+
